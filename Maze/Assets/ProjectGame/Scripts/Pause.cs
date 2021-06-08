@@ -36,6 +36,7 @@ public class Pause : MonoBehaviour
         }
         else
         {
+            Cursor.visible = false;
             pausePanel.SetActive(false);
             playerLook.enabled = true;
             Time.timeScale = 1;
