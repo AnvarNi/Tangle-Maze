@@ -29,6 +29,7 @@ public class PlayerLook : MonoBehaviour
 
     private void Update()
     {
+        Cursor.visible = false;
         mouseX = Input.GetAxisRaw("Mouse X");
         mouseY = Input.GetAxisRaw("Mouse Y");
 
