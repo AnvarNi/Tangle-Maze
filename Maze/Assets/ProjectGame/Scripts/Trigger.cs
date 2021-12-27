@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,7 @@ public class Trigger : MonoBehaviour
     {
         playerLook = player.GetComponent<PlayerLook>();
     }
+    
 
     void OnTriggerEnter(Collider other)
     {
