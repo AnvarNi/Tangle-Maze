@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseButtons : MonoBehaviour
 {
@@ -11,6 +12,6 @@ public class PauseButtons : MonoBehaviour
 
     public void ExitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 }
