@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Settings : MonoBehaviour
 {
-    public Dropdown dropdown;
+    public TMP_Dropdown dropdown;
 
     public Toggle toggle;
 

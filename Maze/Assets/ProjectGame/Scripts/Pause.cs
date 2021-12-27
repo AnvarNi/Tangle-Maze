@@ -38,6 +38,8 @@ public class Pause : MonoBehaviour
         {
             pausePanel.SetActive(false);
             playerLook.enabled = true;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
         }
     }
