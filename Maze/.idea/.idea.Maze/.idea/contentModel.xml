@@ -7,6 +7,15 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="_www.unityassetcollection.com.txt" t="Include" />
+        <e p="AZURE Nature" t="Include">
+          <e p="README.txt" t="Include" />
+          <e p="Shaders" t="Include">
+            <e p="AN_Surface.shader" t="Include" />
+            <e p="AN_Vegetation.shader" t="Include" />
+            <e p="AN_Water.shader" t="Include" />
+          </e>
+        </e>
         <e p="BrokenVector" t="Include">
           <e p="LowPolyTreePack" t="Include">
             <e p="README.txt" t="Include" />
@@ -74,11 +83,6 @@
           <e p="PolyPacks" t="Include">
             <e p="Wind" t="Include">
               <e p="Assets" t="Include">
-                <e p="Scripts" t="Include">
-                  <e p="Editor" t="Include">
-                    <e p="LPVegetation_MaterialInspector.cs" t="Include" />
-                  </e>
-                </e>
                 <e p="Shaders" t="Include">
                   <e p="ASE" t="Include">
                     <e p="LPW_Vegetation.shader" t="Include" />
@@ -105,8 +109,12 @@
         <e p="ProjectGame" t="Include">
           <e p="Scripts" t="Include">
             <e p="Buttons.cs" t="Include" />
+            <e p="CollectableItem.cs" t="Include" />
             <e p="Door.cs" t="Include" />
             <e p="DoorController.cs" t="Include" />
+            <e p="Inventory.cs" t="Include" />
+            <e p="InventoryUI.cs" t="Include" />
+            <e p="Item.cs" t="Include" />
             <e p="Key.cs" t="Include" />
             <e p="MoveCamera.cs" t="Include" />
             <e p="Pause.cs" t="Include" />
@@ -123,9 +131,6 @@
         </e>
         <e p="Shared" t="Include">
           <e p="Ramps" t="Include">
-            <e p="Editor" t="Include">
-              <e p="RampAssetEditor.cs" t="Include" />
-            </e>
             <e p="Runtime" t="Include">
               <e p="RampAsset.cs" t="Include" />
             </e>
@@ -159,9 +164,6 @@
         </e>
         <e p="TutorialInfo" t="Include">
           <e p="Scripts" t="Include">
-            <e p="Editor" t="Include">
-              <e p="ReadmeEditor.cs" t="Include" />
-            </e>
             <e p="Readme.cs" t="Include" />
           </e>
         </e>
