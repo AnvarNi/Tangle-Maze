@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DoorController : MonoBehaviour
 {
     public float distance = 2f;
     List<Key> keyList;
+    public TMP_Text attention;
+    private float timeToHide;
 
     void Start()
     {
@@ -26,18 +29,35 @@ public class DoorController : MonoBehaviour
                     Door door = hit.collider.GetComponent<Door>();
                     if (door.isLocked)
                     {
-                        for (int i = 0; i < keyList.Count; i++)
+                        //for (int i = 0; i < keyList.Count; i++)
+                        //{
+                        //    if (keyList[i].id == door.id)
+                        //    {
+                        //        door.isLocked = false;
+                        //        door.isOpen = !door.isOpen;
+                        //        keyList.Remove(keyList[i]);
+                        //    }
+                        //    else
+                        //    {
+                        //        Debug.Log("ÐÐµÑ‚ ÐºÐ»ÑŽÑ‡Ð°");
+                        //    }
+                        //}
+                        var inventory = GameObject.Find("Player").GetComponentInChildren<Inventory>();
+                        foreach (var item in inventory.items)
                         {
-                            if (keyList[i].id == door.id)
+                            if (item.id == door.id)
                             {
                                 door.isLocked = false;
                                 door.isOpen = !door.isOpen;
-                                keyList.Remove(keyList[i]);
+                                inventory.RemoveItem(door.id);
+                                break;
                             }
-                            else
-                            {
-                                Debug.Log("Íåò êëþ÷à");
-                            }
+                        }
+
+                        if (door.isLocked)
+                        {
+                            attention.alpha = 1;
+                            timeToHide = 0;
                         }
                     }
                     else
@@ -53,6 +73,16 @@ public class DoorController : MonoBehaviour
                     Destroy(key.gameObject);
                 }
             }
+        }
+        if (attention.alpha > 0)
+        {
+            timeToHide += Time.deltaTime;
+            if (timeToHide >= 3)
+                attention.alpha -= Time.deltaTime;
+        }
+        else
+        {
+            timeToHide = 0;
         }
     }
 }
