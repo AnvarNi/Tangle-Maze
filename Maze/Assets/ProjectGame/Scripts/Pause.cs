@@ -9,7 +9,7 @@ public class Pause : MonoBehaviour
     [SerializeField]
     public KeyCode pauseButton;
     [SerializeField]
-    private GameObject pausePanel;
+    public GameObject pausePanel;
     [SerializeField]
     private GameObject player;
     private PlayerLook playerLook;

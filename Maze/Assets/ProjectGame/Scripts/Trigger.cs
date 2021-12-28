@@ -8,8 +8,8 @@ public class Trigger : MonoBehaviour
 {
     [SerializeField]
     private GameObject levelEndPanel;
-    [HideInInspector]
-    public bool isPaused;
+
+    [SerializeField] private GameObject PauseManager;
     [SerializeField]
     private GameObject pausePanel;
     [SerializeField]
@@ -28,18 +28,13 @@ public class Trigger : MonoBehaviour
         {
             if (other.tag == "Player")
             {
-                isPaused = !isPaused;
+                PauseManager.GetComponent<Pause>().isPaused = true;
+                PauseManager.GetComponent<Pause>().pausePanel.GetComponent<CanvasGroup>().alpha = 0;
                 levelEndPanel.SetActive(true);
                 playerLook.enabled = false;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
                 Time.timeScale = 0;
-            }
-            else
-            {
-                levelEndPanel.SetActive(false);
-                playerLook.enabled = true;
-                Time.timeScale = 1;
             }
         }
     }
